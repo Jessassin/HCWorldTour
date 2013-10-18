@@ -1,0 +1,42 @@
+#Hide Plugins
+*:/plugins [$] = >>>
+	_check_group(player(),'operator')
+	sudo('/plugins')
+<<<
+*:/pl [$] = call_alias('/plugins')
+
+#hide help
+*:/help [$] = >>>
+	_check_group(player(),'operator')
+	sudo(concat('/help ',$))
+<<<
+
+#make reloading aliases easier
+*:/ra = >>>
+	_check_group(player(),'operator')
+	sudo('/reloadaliases')
+<<<
+
+#prevent usage of /me
+*:/me [$] = >>>
+	_check_permission(player(),'hermitcraft.hermit')
+	sudo(concat('/me ',$))
+<<<
+
+#prevent opping players
+*:/op [$] = >>>
+	_check_group(player(),'operator')
+	sudo(concat('/op ',$))
+<<<
+
+#only allow hermits to kick / ban
+*:/kick [$] = >>>
+	_check_permission(player(),'hermitcraft.hermit')
+	sudo(concat('/kick ',$))
+<<<
+
+#only allow hermits to kick / ban
+*:/ban [$] = >>>
+	_check_permission(player(),'hermitcraft.hermit')
+	sudo(concat('/ban ',$))
+<<<
