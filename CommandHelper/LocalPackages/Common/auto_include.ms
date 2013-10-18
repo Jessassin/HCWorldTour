@@ -8,7 +8,6 @@ proc(_check_group,@player,@group,
 
 proc(_check_permission,@player,@node,
 	#if player does not have permission node, cancel all further actions
-	console(has_permission(@player,@node))
 	if(not(has_permission(@player,@node)),
 		die(color('red'),'Invalid Permissions')
 	)
