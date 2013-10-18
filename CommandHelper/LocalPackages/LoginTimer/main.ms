@@ -1,1 +1,1 @@
-bind(player_prelogin,null,null,@event,	#console(@event)	assign(@player,@event['player'])	assign(@cancel,_filter_login(@player))	if(@cancel == 'true',		modify_event('result','KICK_OTHER')		modify_event('kickmsg','You ran out of time to play :(')		console('KICKING PLAYER!')	))
+bind(player_prelogin,null,null,@event,	assign(@player,@event['player'])	assign(@cancel,_filter_login(@player))	if(@cancel == 'true',		modify_event('result','KICK_OTHER')		modify_event('kickmsg','You ran out of time to play :(')	))_interval()

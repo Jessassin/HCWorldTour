@@ -2,7 +2,6 @@
 bind(player_chat,null,null,@event,
 	#assign player & time variables
 	assign(@player,@event['player'])
-	assign(@time,time())
 	#check whether to cancel the chat
-	cancel(_chat_intercept(@player,@time))
+	cancel(_chat_intercept(@player))
 )
