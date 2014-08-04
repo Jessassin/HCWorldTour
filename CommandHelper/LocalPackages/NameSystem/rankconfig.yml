@@ -1,0 +1,20 @@
+default:
+  prefix: ''
+  suffix: ''
+  description: 'Rank listings:'
+  order: 1
+hermit:
+  prefix: '&6[Hermit]'
+  suffix: ''
+  description: 'Hermit!'
+  order: 2
+moderator:
+  prefix: ''
+  suffix: '&c[M]'
+  description: 'Moderator'
+  order: 11
+admin:
+  prefix: ''
+  suffix: '&4[A]'
+  description: 'Administrator'
+  order: 12
