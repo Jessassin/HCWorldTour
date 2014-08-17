@@ -1,19 +1,19 @@
 #Hide Plugins
 *:/plugins [$] = >>>
-	_check_group(player(),'operator')
+	_check_group(player(),'admin')
 	sudo('/plugins')
 <<<
 *:/pl [$] = call_alias('/plugins')
 
 #hide help
 *:/help [$] = >>>
-	_check_group(player(),'operator')
+	_check_group(player(),'admin')
 	sudo(concat('/help ',$))
 <<<
 
 #make reloading aliases easier
 *:/ra = >>>
-	_check_group(player(),'operator')
+	_check_group(player(),'admin')
 	sudo('/reloadaliases')
 <<<
 
@@ -25,7 +25,7 @@
 
 #prevent opping players
 *:/op [$] = >>>
-	_check_group(player(),'operator')
+	_check_group(player(),'admin')
 	sudo(concat('/op ',$))
 <<<
 
