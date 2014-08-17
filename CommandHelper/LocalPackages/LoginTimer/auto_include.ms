@@ -19,15 +19,19 @@ proc(_interval,
 
 proc(_run_on_interval,
 	foreach(all_players(),@player,
-		if(_time_left(@player) <= 0,
-			if(not(has_permission(@player,'hermitcraft.hermit')),
-				pkick(@player,'You ran out of time!')
-			)
-		)
-		if(not(has_permission(@player,'hermitcraft.hermit')),
-			_update_scoreboard(@player)
-		)
+    queue_push(closure(_queue_kick(@player)))
 	)
+)
+
+proc(_queue_kick,@player,
+  if(_time_left(@player) <= 0,
+    if(not(has_permission(@player,'hermitcraft.hermit')),
+      pkick(@player,'You ran out of time!')
+    )
+  )
+  if(not(has_permission(@player,'hermitcraft.hermit')),
+    _update_scoreboard(@player)
+  )
 )
 
 proc(_update_scoreboard,@player,
@@ -54,7 +58,6 @@ proc(_update_scoreboard,@player,
 		set_objective_display(@objectivename,@displayinfo,@boardname)
 	)
 	set_pscore(@objectivename,@player,@minutes_left,@boardname)
-
 )
 
 proc(_time_left,@player,
@@ -64,6 +67,14 @@ proc(_time_left,@player,
 	assign(@time_passed, @time - _first_login(@player))
 	assign(@time_left, @allowed_time - @time_passed)
 	return(@time_left)
+)
+
+#Same as _first_login, but will not set the first login if it is not already set.
+proc(_get_first_login,@player,
+	assign(@time,time())
+	assign(@l_player,to_lower(@player))
+	assign(@first_login,get_value(concat(@l_player,'_first_login')))
+	return(@first_login)
 )
 
 proc(_first_login,@player,
