@@ -19,7 +19,9 @@ proc(_interval,
 
 proc(_run_on_interval,
 	foreach(all_players(),@player,
-    queue_push(closure(_queue_kick(@player)))
+    queue_delay(1,'kickqueue')
+    queue_push(closure(_queue_kick(@player)),'kickqueue')
+    queue_delay(1,'kickqueue')
 	)
 )
 
