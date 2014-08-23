@@ -1,0 +1,187 @@
+groups:
+  default:
+    default: true
+    permissions:
+    - modifyworld.*
+    - commandbook.who
+    - commandbook.motd
+    - commandbook.rules
+    - commandbook.kit.list
+    - commandbook.kit.kits.starter
+    - commandbook.spawn
+    - commandbook.teleport
+    - commandbook.return
+    - commandbook.warp.teleport
+    - commandbook.warp.teleport.*
+    - commandbook.warp.warp.*
+    - commandbook.warp.info
+    - commandbook.warp.list
+    - commandbook.speed.flight
+    - commandbook.speed.walk
+    - commandbook.pong
+  hermit:
+    permissions:
+    - simplereserve.enter.full
+    - commandbook.give.*
+    - commandbook.more.*
+    - commandbook.spawn
+    - worldguard.region.bypass.*
+    - commandbook.return
+    - commandbook.teleport.*
+    - commandbook.warp.*
+    - commandbook.gamemode
+    - commandbook.gamemode.change
+    - commandbook.gamemode.check
+    - commandbook.gamemode.check.others
+    - commandbook.kick.exempt
+    - commandbook.kick
+    - commandbook.bans.exempt
+    - commandbook.bans.ban
+    - commandbook.god
+    - hermitcraft.hermit
+    inheritance:
+    - default
+  admin:
+    permissions:
+    - simplereserve.enter.full
+    - '*.*'
+    - permissions.*
+    inheritance:
+    - hermit
+schema-version: 1
+users:
+  jessassin:
+    group:
+    - hermit
+    - admin
+    options:
+      name: Jessassin
+  ZombieCleo:
+    group:
+    - hermit
+  hypnotizd:
+    group:
+    - hermit
+  Knasher10:
+    group:
+    - hermit
+  Keralis1:
+    group:
+    - hermit
+  Kiershar:
+    group:
+    - hermit
+  William63:
+    group:
+    - hermit
+  Biffa001:
+    group:
+    - hermit
+  sl1pg8r:
+    group:
+    - hermit
+  Mrs_Keralis:
+    group:
+    - hermit
+  CilantroGamer:
+    group:
+    - hermit
+  iJevinYT:
+    group:
+    - hermit
+  MrMumbo:
+    group:
+    - hermit
+  falsesymmetry:
+    group:
+    - hermit
+  Biffa2001:
+    group:
+    - hermit
+  Dinnerbone:
+    group:
+    - hermit
+  Cleophas:
+    group:
+    - hermit
+  Marriland_:
+    group:
+    - hermit
+  KingDaddyDMAC:
+    group:
+    - hermit
+  Pungence:
+    group:
+    - hermit
+  Nativisions:
+    group:
+    - hermit
+  red3yz:
+    group:
+    - hermit
+  v2_Jester:
+    group:
+    - hermit
+  monkeyfarm:
+    group:
+    - hermit
+  skyzm:
+    group:
+    - hermit
+  xisumavoid:
+    group:
+    - hermit
+  dg600n:
+    group:
+    - hermit
+  joehillssays:
+    group:
+    - hermit
+  MoonlightCamera:
+    group:
+    - hermit
+  topmass:
+    group:
+    - hermit
+  Unhost:
+    group:
+    - hermit
+  Juicetra:
+    group:
+    - hermit
+  Spumwackles:
+    group:
+    - hermit
+  350c312e-4eb8-49bf-a1b6-8decb3a16f52:
+    group:
+    - admin
+    - hermit
+    options:
+      name: Jessassin
+    permissions:
+    - '*.*'
+  5f15204a-4906-49a9-932b-ce1ad9796ab0:
+    group:
+    - hermit
+    options:
+      name: zueljin
+  cbf33660-3994-42c3-8d2f-6a1a84d56dea:
+    group:
+    - hermit
+    options:
+      name: Tinfoilchef
+  f216a88d-8077-456a-9b1f-96e0b158252b:
+    group:
+    - hermit
+    options:
+      name: IAmSp00n
+  62fec5a3-1896-4beb-94e0-36e34898c787:
+    group:
+    - hermit
+    options:
+      name: TangoTek
+  21ef397c-3a76-4eb7-aa17-a99d3fc658e2:
+    group:
+    - hermit
+    options:
+      name: Xisuma
