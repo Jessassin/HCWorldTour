@@ -64,7 +64,7 @@ proc(_update_scoreboard,@player,
 
 proc(_time_left,@player,
 	assign(@time,time())
-	assign(@allowed_minutes,5)
+	assign(@allowed_minutes,15)
 	assign(@allowed_time,@allowed_minutes * 60 * 1000)
 	assign(@time_passed, @time - _first_login(@player))
 	assign(@time_left, @allowed_time - @time_passed)
