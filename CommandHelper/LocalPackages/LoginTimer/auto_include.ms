@@ -64,9 +64,9 @@ proc(_update_scoreboard,@player,
 
 proc(_time_left,@player,
 	assign(@time,time())
-	assign(@allowed_minutes,15)
+	assign(@allowed_minutes,5)
 	assign(@allowed_time,@allowed_minutes * 60 * 1000)
-	assign(@time_passed, @time - _first_login(@player))
+	assign(@time_passed, @time - _get_first_login(@player))
 	assign(@time_left, @allowed_time - @time_passed)
 	return(@time_left)
 )
@@ -76,19 +76,36 @@ proc(_get_first_login,@player,
 	assign(@time,time())
 	assign(@l_player,to_lower(@player))
 	assign(@first_login,get_value(concat(@l_player,'_first_login')))
-	return(@first_login)
+  if(length(@first_login) < 8,
+    return(@time),
+    return(@first_login)
+  )
 )
 
-proc(_first_login,@player,
+# proc(_first_login,@player,
+	# assign(@time,time())
+	# assign(@l_player,to_lower(@player))
+	# assign(@first_login,get_value(concat(@l_player,'_first_login')))
+	# if(length(@first_login) < 8,
+		# store_value(concat(@l_player,'_first_login'),@time)
+		# assign(@first_login,time())
+	# )
+	# return(@first_login)		
+# )
+
+proc(_set_first_login,@player,
+  # console(concat('First login set for: ',@player))
 	assign(@time,time())
 	assign(@l_player,to_lower(@player))
-	assign(@first_login,get_value(concat(@l_player,'_first_login')))
-	if(length(@first_login) < 8,
-		store_value(concat(@l_player,'_first_login'),@time)
-		assign(@first_login,time())
-	)
-	return(@first_login)		
+	store_value(concat(@l_player,'_first_login'),@time)
 )
+
+proc(_reset_first_login,@player,
+  # console(concat('First login reset for: ',@player))
+	assign(@l_player,to_lower(@player))
+	store_value(concat(@l_player,'_first_login'),null)
+)
+
 
 proc(_to_seconds,@milliseconds,
 	assign(@seconds,round(divide(@milliseconds,1000),0))
